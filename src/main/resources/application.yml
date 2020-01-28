@@ -1,0 +1,10 @@
+spring:
+  thymeleaf:
+    mode: HTML
+    prefix: classpath:/templates/
+    encoding: utf-8
+  profiles:
+    active: pro
+
+comment:
+  avatar: /images/avatar.jpg #自定义图片地址，可以通过自动注入取值
