@@ -30,7 +30,7 @@ public class TypesController {
     @GetMapping("types/inputs")
     public String typesInput(Model model) {
         model.addAttribute("type", new Type());
-        return "/admin/types-input";
+        return "admin/types-input";
     }
     
     /**
@@ -45,7 +45,7 @@ public class TypesController {
         //分页信息分装
         PageInfo<Type> pageInfo = new PageInfo<>(types);
         model.addAttribute("pageInfo",pageInfo ) ;
-        return "/admin/types";
+        return "admin/types";
     }
     
     /**

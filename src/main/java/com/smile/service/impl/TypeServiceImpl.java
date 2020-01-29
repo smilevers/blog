@@ -64,7 +64,7 @@ public class TypeServiceImpl implements TypeService {
      */
     @Override
     public void updateType(Type type) {
-        typeDao.updateByPrimaryKey(type);
+        typeDao.updateByPrimaryKeySelective(type);
     }
     
     /**

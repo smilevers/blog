@@ -77,7 +77,7 @@ public class IndexController {
      * 搜索展示
      * @return
      */
-    @GetMapping("/search")
+    @GetMapping("search")
     public String search(@RequestParam(defaultValue = "1") Integer pageNum
             , @RequestParam(defaultValue = "5") Integer pageSize , Model model,@RequestParam(name = "query") String query) {
         System.out.println(query);

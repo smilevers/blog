@@ -34,7 +34,7 @@ public class TagsController {
         List<Tag> tags = tagService.listTag(pageNum, pageSize);
         PageInfo<Tag> pageInfo = new PageInfo<>(tags);
         model.addAttribute("pageInfo", pageInfo);
-        return "/admin/tags";
+        return "admin/tags";
     }
     
     /**
@@ -44,7 +44,7 @@ public class TagsController {
     @GetMapping("tags/inputs")
     public String typesInput(Model model) {
         model.addAttribute("tag", new Tag());
-        return "/admin/tags-input";
+        return "admin/tags-input";
     }
     
     /**

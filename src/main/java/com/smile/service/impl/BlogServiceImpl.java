@@ -114,7 +114,7 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public int updateBlog(Blog blog) {
         blog.setUpdateTime(new Date());
-        return blogDao.updateByPrimaryKey(blog);
+        return blogDao.updateByPrimaryKeySelective(blog);
     }
     
     /**
@@ -150,7 +150,7 @@ public class BlogServiceImpl implements BlogService {
         Example example = new Example(Blog.class);
         Example.Criteria criteria = example.createCriteria();
         criteria.andEqualTo("recommend", true);
-        example.orderBy("updateTime");
+        example.orderBy("updateTime").desc();
         PageHelper.startPage(1, 6);
         List<Blog> blogList = blogDao.selectByExample(example);
         return blogList;

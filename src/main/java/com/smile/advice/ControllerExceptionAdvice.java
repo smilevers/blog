@@ -37,7 +37,7 @@ public class ControllerExceptionAdvice {
         ModelAndView mv = new ModelAndView();
         mv.addObject("url", request.getRequestURI());
         mv.addObject("exception", e);
-        mv.setViewName("error/500");
+        mv.setViewName("error/error");
         return mv;
     }
     

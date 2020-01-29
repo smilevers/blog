@@ -28,8 +28,8 @@ import java.util.List;
 @RequestMapping("admin")
 public class BlogController {
     
-    private static final String INPUT = "/admin/blogs-input";
-    private static final String LIST = "/admin/blogs";
+    private static final String INPUT = "admin/blogs-input";
+    private static final String LIST = "admin/blogs";
     private static final String REDIRECT_LIST = "redirect:/admin/blogs";
     
     @Autowired
@@ -79,7 +79,7 @@ public class BlogController {
         List<Blog> blogs = blogService.listBlogs(blog, pageNum, pageSize);
         PageInfo<Blog> pageInfo = new PageInfo<>(blogs);
         model.addAttribute("pageInfo", pageInfo);
-        return "/admin/blogs :: blogList";
+        return "admin/blogs :: blogList";
     }
     
     /**
@@ -142,8 +142,6 @@ public class BlogController {
         model.addAttribute("types", typeService.listTypes());
         // 初始化tags
         List<Tag> tags = tagService.listTags();
-        
-        
         model.addAttribute("tags", tags);
         // 返回更改blog
         model.addAttribute("blog", blogService.getBlog(id));

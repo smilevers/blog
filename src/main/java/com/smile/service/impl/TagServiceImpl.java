@@ -58,7 +58,7 @@ public class TagServiceImpl implements TagService {
      */
     @Override
     public int updateTag(Tag tag) {
-        return tagDao.updateByPrimaryKey(tag);
+        return tagDao.updateByPrimaryKeySelective(tag);
     }
     
     /**
